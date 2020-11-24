@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunyur.purchaser.dao.PurchaseApplyClassDAO">
+    <select id="getByParam" resultType="com.sunyur.purchaser.model.PurchaseApplyClassDO">
+		select id, purchase_comany_id, purchase_company_code, purchase_apply_name
+        from purchase_apply_test
+        where id = #{bean.id}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO purchase_apply_test
+        (purchase_comany_id,
+         purchase_company_code,
+         purchase_company_name)
+        VALUES
+        (#{bean.purchaseComanyId},
+         #{bean.purchaseCompanyCode},
+         #{bean.purchaseCompanyName})
+    </insert>
+
+    <delete id="delete">
+        delete
+        from purchase_apply_test
+        where purchase_company_name = #{bean.purchaseCompanyName}
+    </delete>
+
+</mapper>

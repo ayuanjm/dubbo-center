@@ -1,0 +1,32 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver              # mysql驱动包
+    username: root
+    password: Shangyue@123
+    url: jdbc:mysql://rm-8vbs6givq78c5rf52oo.mysql.zhangbei.rds.aliyuncs.com:3306/sunyur_db?useUnicode=true&characterEncodeing=UTF-8&useSSL=false&allowMultiQueries=true
+
+dubbo:
+  application:
+    name: center-provider
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880
+
+
+mybatis:
+  mapper-locations:
+    - classpath:xml_config/mapper/**/*.xml                       # mapper映射文件
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: partial
+    #输出日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    jdbc-type-for-null: 'null'
+    cacheEnabled: false
