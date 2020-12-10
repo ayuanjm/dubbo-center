@@ -16,5 +16,6 @@ public class App {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("xml_config/dubbo_provider.xml");
         context.start();
         System.in.read();
+        //测试分支合并
     }
 }
