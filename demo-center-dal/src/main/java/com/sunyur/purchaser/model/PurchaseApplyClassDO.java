@@ -1,5 +1,8 @@
 package com.sunyur.purchaser.model;
 
+
+import java.io.Serializable;
+
 /**
  * Copyright(c) 2018 Sunyur.com, All Rights Reserved.
  * Project: sy
@@ -7,7 +10,8 @@ package com.sunyur.purchaser.model;
  * CreateDate: 2020/11/23 2:44 下午
  * Description: 采购申请查询java类
  */
-public class PurchaseApplyClassDO {
+public class PurchaseApplyClassDO implements Serializable {
+    private static final long serialVersionUID = 5377610531527238906L;
     /**
      * 主键id
      */
